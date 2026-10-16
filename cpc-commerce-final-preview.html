@@ -1,0 +1,1266 @@
+<!doctype html>
+<html lang="pt-BR" class="dark">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CPC Commerce | Estratégia, Performance e Growth para E-commerce</title>
+  <meta name="description"
+    content="Aceleradora e consultoria de performance para lojas virtuais. Conectamos mídia paga (Google & Meta Ads), estratégia comercial, CRO e CRM para o crescimento sustentável do seu e-commerce.">
+
+  <!-- Fontes Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              yellow: '#ffbd2d',
+              coral: '#f24764',
+              teal: '#00b9bb',
+              ink: '#131615',
+              paper: '#f5f5ef',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Transições suaves de tema */
+    html,
+    body {
+      transition: background-color 0.25s ease, color 0.25s ease;
+      scroll-behavior: smooth;
+    }
+
+    /* Variáveis do Tema */
+    :root {
+      --bg: #f5f5ef;
+      --surface: #ffffff;
+      --surface-2: #eceee8;
+      --fg: #131615;
+      --muted: #636c65;
+      --line: #d2d8ce;
+      --accent: #b47800;
+    }
+
+    html.dark {
+      --bg: #131615;
+      --surface: #1a1f1d;
+      --surface-2: #222926;
+      --fg: #f5f5ef;
+      --muted: #9ca69e;
+      --line: #2e3632;
+      --accent: #ffbd2d;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--fg);
+    }
+
+    .glass-panel {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .radial-glow {
+      background: radial-gradient(circle at 50% 0%, rgba(255, 189, 45, 0.12) 0%, transparent 70%);
+    }
+
+    /* Animação suave para acordeões */
+    details>summary {
+      list-style: none;
+    }
+
+    details>summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details[open] summary .chevron-icon {
+      transform: rotate(180deg);
+    }
+
+    /* Animações das Órbitas e Cubo da Hero */
+    @keyframes orbit-spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes orbit-spin-reverse {
+      from {
+        transform: rotate(360deg);
+      }
+      to {
+        transform: rotate(0deg);
+      }
+    }
+
+    @keyframes cube-float {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-8px) rotate(0.8deg);
+      }
+    }
+
+    @keyframes shadow-breathe {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.25;
+      }
+      50% {
+        transform: scale(0.88);
+        opacity: 0.15;
+      }
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% {
+        opacity: 0.6;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.9;
+        transform: scale(1.08);
+      }
+    }
+
+    .animate-orbit-1 {
+      animation: orbit-spin 28s linear infinite;
+    }
+
+    .animate-orbit-2 {
+      animation: orbit-spin-reverse 20s linear infinite;
+    }
+
+    .animate-orbit-3 {
+      animation: orbit-spin 15s linear infinite;
+    }
+
+    .animate-cube-float {
+      animation: cube-float 5s ease-in-out infinite;
+    }
+
+    .animate-shadow-breathe {
+      animation: shadow-breathe 5s ease-in-out infinite;
+    }
+
+    .animate-pulse-glow {
+      animation: pulse-glow 4s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased selection:bg-[#ffbd2d] selection:text-[#131615]">
+
+  <!-- HEADER NAVEGAÇÃO STICKY -->
+  <header
+    class="sticky top-0 z-50 w-full glass-panel border-b border-[var(--line)] bg-[var(--bg)]/90 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      <!-- Marca -->
+      <a href="#inicio" class="flex items-center gap-3 group focus:outline-none">
+        <img src="cpc-reference/public/cpc-logo.png" alt="Logo CPC Commerce"
+          class="w-9 h-10 object-contain transition-transform group-hover:scale-105"
+          onerror="this.src='https://cpccommerce.com.br/wp-content/uploads/2018/01/2.png'">
+        <div class="flex flex-col leading-none">
+          <span class="font-display font-extrabold text-lg tracking-tight text-[var(--fg)]">CPC</span>
+          <span class="text-[10px] font-bold tracking-[0.22em] text-[var(--muted)] uppercase mt-0.5">COMMERCE</span>
+        </div>
+      </a>
+
+      <!-- Menu Desktop -->
+      <nav class="hidden md:flex items-center gap-7 text-xs font-semibold tracking-wide uppercase text-[var(--muted)]">
+        <a href="#metodo" class="hover:text-[var(--fg)] transition-colors py-2 relative group">
+          Método
+          <span
+            class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-yellow transition-all duration-200 group-hover:w-full"></span>
+        </a>
+        <a href="#solucoes" class="hover:text-[var(--fg)] transition-colors py-2 relative group">
+          Soluções
+          <span
+            class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-yellow transition-all duration-200 group-hover:w-full"></span>
+        </a>
+        <a href="#processo" class="hover:text-[var(--fg)] transition-colors py-2 relative group">
+          Processo
+          <span
+            class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-yellow transition-all duration-200 group-hover:w-full"></span>
+        </a>
+        <a href="#sobre" class="hover:text-[var(--fg)] transition-colors py-2 relative group">
+          Sobre
+          <span
+            class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-yellow transition-all duration-200 group-hover:w-full"></span>
+        </a>
+        <a href="#faq" class="hover:text-[var(--fg)] transition-colors py-2 relative group">
+          FAQ
+          <span
+            class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-yellow transition-all duration-200 group-hover:w-full"></span>
+        </a>
+      </nav>
+
+      <!-- Ações: Alternador de Tema + Botão WhatsApp -->
+      <div class="flex items-center gap-3">
+        <!-- Botão Dark / Light Mode -->
+        <button id="themeToggleBtn" type="button" aria-label="Alternar tema"
+          class="w-10 h-10 rounded-full border border-[var(--line)] bg-[var(--surface)] hover:bg-[var(--surface-2)] text-[var(--fg)] flex items-center justify-center transition-all focus:outline-none"
+          title="Alternar entre modo escuro e claro">
+          <svg id="themeIconSun" class="w-4 h-4 text-brand-yellow hidden dark:block" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+            </path>
+          </svg>
+          <svg id="themeIconMoon" class="w-4 h-4 text-[var(--fg)] block dark:hidden" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+          </svg>
+        </button>
+
+        <a href="https://wa.me/5511964093547?text=Ol%C3%A1%21%20Quero%20conversar%20sobre%20meu%20e-commerce."
+          target="_blank" rel="noopener noreferrer"
+          class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-bold bg-[var(--fg)] text-[var(--bg)] hover:opacity-90 transition-all shadow-sm">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span>Falar no WhatsApp</span>
+          <svg class="w-3.5 h-3.5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <!-- HERO SECTION -->
+    <section class="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden">
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 radial-glow pointer-events-none opacity-60">
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Kicker Superior -->
+        <div
+          class="flex items-center justify-between pb-6 border-b border-[var(--line)] text-[11px] font-bold tracking-[0.2em] text-[var(--muted)] uppercase">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-brand-yellow"></span>
+            <span>CPC COMMERCE</span>
+          </div>
+          <span class="hidden sm:inline text-right text-[10px] tracking-[0.25em]">PERFORMANCE & GROWTH PARA
+            E-COMMERCE</span>
+        </div>
+
+        <!-- Grid Principal da Hero -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center py-10 md:py-16">
+          <div class="lg:col-span-7 flex flex-col items-start">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--surface-2)] border border-[var(--line)] text-xs font-semibold text-[var(--muted)] mb-6">
+              <span class="text-brand-yellow">✨</span>
+              <span>Aceleradora e Consultoria de Performance</span>
+            </div>
+
+            <h1
+              class="font-display font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[-0.04em] leading-[0.98] text-[var(--fg)]">
+              Conhecimento.<br>
+              Estratégia.<br>
+              <span class="text-brand-yellow">E-commerce.</span>
+            </h1>
+
+            <p class="mt-6 text-lg sm:text-xl text-[var(--muted)] max-w-xl leading-relaxed">
+              Uma visão completa do negócio. Experiência prática desde 2010 para conectar gestão de mídia paga,
+              estratégia comercial e relacionamento com clientes.
+            </p>
+
+            <div class="mt-9 flex flex-wrap items-center gap-4">
+              <a href="#metodo"
+                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-bold bg-brand-yellow text-brand-ink hover:opacity-90 transition-all shadow-md hover:-translate-y-0.5">
+                <span>Conheça o Método CPC</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3">
+                  </path>
+                </svg>
+              </a>
+
+              <a href="https://wa.me/5511964093547?text=Ol%C3%A1%2C+quero+agendar+uma+reuni%C3%A3o+via+google+meet"
+                target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-5 py-3.5 rounded-full text-sm font-bold bg-[var(--surface)] hover:bg-[var(--surface-2)] border border-[var(--line)] text-[var(--fg)] transition-all">
+                <span>Agendar Google Meet</span>
+                <svg class="w-4 h-4 text-[var(--muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10">
+                  </path>
+                </svg>
+              </a>
+
+              <a href="#sobre"
+                class="text-xs font-semibold text-[var(--muted)] hover:text-[var(--fg)] underline underline-offset-4 ml-1">
+                Quem está à frente ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Cubo CPC Interativo com Órbitas Dinâmicas Animadas -->
+          <div class="lg:col-span-5 flex justify-center lg:justify-end">
+            <div class="relative flex items-center justify-center select-none w-full max-w-[440px] aspect-square">
+              <!-- Glow radial de fundo dinâmico -->
+              <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-brand-coral/15 via-brand-yellow/15 to-brand-teal/15 blur-3xl pointer-events-none animate-pulse-glow"></div>
+
+              <!-- Órbita 1: Anel Externo com Satélite Amarelo (Conversão) -->
+              <div class="absolute w-[330px] h-[330px] sm:w-[390px] sm:h-[390px] rounded-full pointer-events-none animate-orbit-1">
+                <div class="w-full h-full rounded-full border border-[var(--line)]/60 relative">
+                  <!-- Satélite Amarelo com Glow -->
+                  <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
+                    <span class="absolute w-4 h-4 rounded-full bg-brand-yellow/40 animate-ping"></span>
+                    <span class="w-3 h-3 rounded-full bg-brand-yellow shadow-[0_0_12px_#ffbd2d]"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Órbita 2: Anel Médio Tracejado com Satélite Teal (Relacionamento) -->
+              <div class="absolute w-[265px] h-[265px] sm:w-[315px] sm:h-[315px] rounded-full pointer-events-none animate-orbit-2">
+                <div class="w-full h-full rounded-full border border-dashed border-[var(--line)]/50 relative">
+                  <!-- Satélite Teal com Glow -->
+                  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 flex items-center justify-center">
+                    <span class="w-2.5 h-2.5 rounded-full bg-brand-teal shadow-[0_0_10px_#00b9bb]"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Órbita 3: Anel Interno Fino com Satélite Coral (Atração) -->
+              <div class="absolute w-[205px] h-[205px] sm:w-[240px] sm:h-[240px] rounded-full pointer-events-none animate-orbit-3">
+                <div class="w-full h-full rounded-full border border-brand-coral/25 relative">
+                  <!-- Satélite Coral com Glow -->
+                  <div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
+                    <span class="w-2 h-2 rounded-full bg-brand-coral shadow-[0_0_10px_#f24764]"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SVG do Cubo com animação de flutuação e as 3 cores da marca -->
+              <div class="relative z-10 w-[230px] sm:w-[270px] animate-cube-float drop-shadow-[0_24px_38px_rgba(0,0,0,0.35)] cursor-pointer">
+                <svg viewBox="0 0 200 220" class="w-full h-full overflow-visible transition-transform duration-300 hover:scale-105" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Sombra de apoio respirando -->
+                  <ellipse cx="100" cy="208" rx="65" ry="12" fill="rgba(0,0,0,0.22)" class="animate-shadow-breathe" />
+
+                  <!-- Face Superior / Amarelo (02 Converter) -->
+                  <polygon points="100,12 178,57 178,142 100,97" fill="#ffbd2d" stroke="#131615" stroke-width="4"
+                    stroke-linejoin="round" class="transition-all duration-200 hover:brightness-110" />
+                  <!-- Face Esquerda / Coral (01 Atrair) -->
+                  <polygon points="100,12 22,57 22,142 100,97" fill="#f24764" stroke="#131615" stroke-width="4"
+                    stroke-linejoin="round" class="transition-all duration-200 hover:brightness-110" />
+                  <!-- Face Inferior / Teal (03 Relacionar) -->
+                  <polygon points="100,97 178,142 100,187 22,142" fill="#00b9bb" stroke="#131615" stroke-width="4"
+                    stroke-linejoin="round" class="transition-all duration-200 hover:brightness-110" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rodapé da Hero -->
+        <div
+          class="pt-6 border-t border-[var(--line)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs font-medium text-[var(--muted)]">
+          <div class="flex items-center gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-yellow"></span>
+            <span>Especialistas em lojas virtuais</span>
+            <span class="text-[var(--line)]">•</span>
+            <span>Mídia · Estratégia comercial · Relacionamento</span>
+          </div>
+          <div class="text-[11px] text-[var(--muted)]">
+            +150 projetos de e-commerce e mais de R$ 4 mi/mês em vendas geridas
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENTES SECTION -->
+    <section id="clientes" class="py-12 border-y border-[var(--line)] bg-[var(--surface)]/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-3">
+            <span class="text-[11px] font-bold tracking-[0.2em] text-[var(--muted)] uppercase block leading-relaxed">
+              Experiência prática ao lado de marcas como
+            </span>
+          </div>
+
+          <div
+            class="md:col-span-9 grid grid-cols-2 sm:grid-cols-4 gap-8 items-center justify-items-center sm:justify-items-start">
+            <span
+              class="font-display font-extrabold text-2xl sm:text-3xl tracking-[-0.04em] text-[var(--fg)]/80 hover:text-[var(--fg)] transition-colors">Brogan</span>
+            <span
+              class="font-sans font-medium text-2xl sm:text-3xl tracking-[-0.02em] text-[var(--fg)]/80 hover:text-[var(--fg)] transition-colors">outlet
+              360</span>
+            <span
+              class="font-serif italic font-normal text-2xl sm:text-3xl text-[var(--fg)]/80 hover:text-[var(--fg)] transition-colors">byara</span>
+            <span
+              class="font-sans font-semibold text-xl sm:text-2xl tracking-[0.35em] text-[var(--fg)]/80 hover:text-[var(--fg)] transition-colors">MISS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISÃO & 3 PILARES -->
+    <section id="metodo" class="py-20 md:py-32 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mb-16 md:mb-20">
+          <div class="flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-[var(--muted)] uppercase mb-4">
+            <span class="w-2 h-2 rounded-full bg-brand-coral"></span>
+            <span>O Método CPC Commerce</span>
+          </div>
+
+          <h2
+            class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-[-0.03em] leading-[1.08] text-[var(--fg)]">
+            E-commerce é um negócio.<br>
+            <span class="text-[var(--muted)] font-normal italic">É assim que olhamos para ele.</span>
+          </h2>
+
+          <p class="mt-6 text-base sm:text-lg text-[var(--muted)] leading-relaxed">
+            A CPC Commerce conecta a gestão de tráfego pago à realidade comercial da loja. Estoque, margem, calendário
+            promocional, jornada de compra e fidelização não podem operar em silos isolados.
+          </p>
+        </div>
+
+        <!-- Grid dos 3 Pilares -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <!-- Pilar 01: Atrair -->
+          <div
+            class="rounded-2xl p-8 bg-[var(--surface)] border border-[var(--line)] hover:border-brand-coral/60 transition-all shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between pb-6 border-b border-[var(--line)] mb-6">
+                <span class="font-mono text-xs font-bold text-[var(--muted)]">01 / ATRAIR</span>
+                <span class="w-2.5 h-2.5 rounded-full bg-brand-coral"></span>
+              </div>
+              <h3 class="font-display font-bold text-2xl text-[var(--fg)] mb-3">Aquisição de clientes</h3>
+              <p class="text-sm text-[var(--muted)] leading-relaxed mb-6">
+                Mídia paga conectada ao momento da operação. O investimento vai para onde há margem, estoque e demanda —
+                não apenas para onde há clique.
+              </p>
+              <div class="mb-6">
+                <span class="text-[10px] font-bold tracking-wider text-[var(--muted)] uppercase block mb-3">Alavancas
+                  Práticas</span>
+                <ul class="space-y-2 text-xs text-[var(--fg)]/90">
+                  <li class="flex items-center gap-2"><span
+                      class="w-1.5 h-1.5 rounded-full bg-brand-coral"></span>Google Ads & Shopping</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-coral"></span>Meta
+                    Ads (Instagram & Facebook)</li>
+                  <li class="flex items-center gap-2"><span
+                      class="w-1.5 h-1.5 rounded-full bg-brand-coral"></span>Públicos e segmentação</li>
+                  <li class="flex items-center gap-2"><span
+                      class="w-1.5 h-1.5 rounded-full bg-brand-coral"></span>Criativos e roteiros de alta conversão</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pt-6 border-t border-[var(--line)]">
+              <span class="text-[10px] font-bold tracking-wider text-[var(--muted)] uppercase block mb-2">Métricas de
+                Sucesso</span>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2 py-1 rounded bg-[var(--surface-2)] text-[11px] font-medium">CAC</span>
+                <span class="px-2 py-1 rounded bg-[var(--surface-2)] text-[11px] font-medium">ROAS</span>
+                <span class="px-2 py-1 rounded bg-[var(--surface-2)] text-[11px] font-medium">CPA</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pilar 02: Converter -->
+          <div
+            class="rounded-2xl p-8 bg-[var(--surface)] border border-[var(--line)] hover:border-brand-yellow/70 transition-all shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between pb-6 border-b border-[var(--line)] mb-6">
+                <span class="font-mono text-xs font-bold text-[var(--muted)]">02 / CONVERTER</span>
+                <span class="w-2.5 h-2.5 rounded-full bg-brand-yellow"></span>
+              </div>
+              <h3 class="font-display font-bold text-2xl text-[var(--fg)] mb-3">Estratégia comercial</h3>
+              <p class="text-sm text-[var(--muted)] leading-relaxed mb-6">
+                Oferta, calendário e experiência de compra trabalhando juntos para transformar visita em pedido — com
+                metas claras para orientar o time.
+              </p>
+              <div class="mb-6">
+                <span class="text-[10px] font-bold tracking-wider text-[var(--muted)] uppercase block mb-3">Alavancas
+                  Práticas</span>
+                <ul class="space-y-2 text-xs text-[var(--fg)]/90">
+                  <li class="flex items-center gap-2"><span
+                      class="w-1.5 h-1.5 rounded-full bg-brand-yellow"></span>Planejamento de vendas e metas</li>
+                  <li class="flex items-center gap-2"><span
+                      class="w-1.5 h-1.5 rounded-full bg-brand-yellow"></span>Calendário promocional</li>
+                  <li class="flex items-center gap-2"><span
+                      class="w-1.5 h-1.5 rounded-full bg-brand-yellow"></span>Estratégia para Live Shop</li>
+                  <li class="flex items-center gap-2"><span
+                      class="w-1.5 h-1.5 rounded-full bg-brand-yellow"></span>Otimização de PDPs e funil (CRO)</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pt-6 border-t border-[var(--line)]">
+              <span class="text-[10px] font-bold tracking-wider text-[var(--muted)] uppercase block mb-2">Métricas de
+                Sucesso</span>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2 py-1 rounded bg-[var(--surface-2)] text-[11px] font-medium">Taxa de Conversão</span>
+                <span class="px-2 py-1 rounded bg-[var(--surface-2)] text-[11px] font-medium">Ticket Médio</span>
+                <span class="px-2 py-1 rounded bg-[var(--surface-2)] text-[11px] font-medium">Faturamento</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pilar 03: Relacionar -->
+          <div
+            class="rounded-2xl p-8 bg-[var(--surface)] border border-[var(--line)] hover:border-brand-teal/60 transition-all shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between pb-6 border-b border-[var(--line)] mb-6">
+                <span class="font-mono text-xs font-bold text-[var(--muted)]">03 / RELACIONAR</span>
+                <span class="w-2.5 h-2.5 rounded-full bg-brand-teal"></span>
+              </div>
+              <h3 class="font-display font-bold text-2xl text-[var(--fg)] mb-3">Relacionamento & LTV</h3>
+              <p class="text-sm text-[var(--muted)] leading-relaxed mb-6">
+                Quem já comprou é o ativo mais valioso da loja. CRM e automações para recuperar vendas, reativar
+                clientes e construir recompra com custo baixo.
+              </p>
+              <div class="mb-6">
+                <span class="text-[10px] font-bold tracking-wider text-[var(--muted)] uppercase block mb-3">Alavancas
+                  Práticas</span>
+                <ul class="space-y-2 text-xs text-[var(--fg)]/90">
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>Réguas
+                    de relacionamento automáticas</li>
+                  <li class="flex items-center gap-2"><span
+                      class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>Recuperação de carrinho e checkout</li>
+                  <li class="flex items-center gap-2"><span
+                      class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>Segmentação RFM da base</li>
+                  <li class="flex items-center gap-2"><span
+                      class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>Campanhas de e-mail marketing</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pt-6 border-t border-[var(--line)]">
+              <span class="text-[10px] font-bold tracking-wider text-[var(--muted)] uppercase block mb-2">Métricas de
+                Sucesso</span>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2 py-1 rounded bg-[var(--surface-2)] text-[11px] font-medium">Taxa de Recompra</span>
+                <span class="px-2 py-1 rounded bg-[var(--surface-2)] text-[11px] font-medium">LTV</span>
+                <span class="px-2 py-1 rounded bg-[var(--surface-2)] text-[11px] font-medium">Receita CRM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 SOLUÇÕES COM ENTREGAS EXPANSÍVEIS -->
+    <section id="solucoes" class="py-20 md:py-32 bg-[var(--surface)]/40 border-t border-[var(--line)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mb-14">
+          <div class="flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-[var(--muted)] uppercase mb-4">
+            <span class="w-2 h-2 rounded-full bg-brand-yellow"></span>
+            <span>Nossas Soluções</span>
+          </div>
+
+          <h2
+            class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-[-0.03em] text-[var(--fg)] leading-tight">
+            Especialização em cada frente.<br>
+            <span class="text-[var(--muted)] font-normal">Visão do todo.</span>
+          </h2>
+          <p class="mt-4 text-sm sm:text-base text-[var(--muted)] leading-relaxed">
+            Nossa atuação reúne análise, planejamento e execução diária. Cada frente considera o contexto comercial e o
+            momento de escala da sua operação.
+          </p>
+        </div>
+
+        <!-- Grid dos 6 Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- 01 -->
+          <article
+            class="rounded-2xl p-7 bg-[var(--surface)] border border-[var(--line)] flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between pb-5 border-b border-[var(--line)] mb-5">
+                <span
+                  class="text-xs font-bold px-2.5 py-1 rounded bg-[var(--surface-2)] text-brand-yellow">CONVERTER</span>
+                <span class="font-mono text-xs font-bold text-[var(--muted)]">01</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-[var(--fg)] mb-3">Planejamento estratégico e comercial</h3>
+              <p class="text-xs sm:text-sm text-[var(--muted)] leading-relaxed mb-5">
+                Transformamos os objetivos do e-commerce em um plano de ação mensal, com prioridades claras para
+                orientar a execução do time.
+              </p>
+            </div>
+            <details class="pt-4 border-t border-[var(--line)] group">
+              <summary class="flex items-center justify-between text-xs font-bold text-[var(--fg)] cursor-pointer">
+                <span>Conheça as entregas (5)</span>
+                <span class="chevron-icon transition-transform">▼</span>
+              </summary>
+              <ul class="mt-4 pt-3 border-t border-[var(--line)]/60 space-y-2 text-xs text-[var(--muted)]">
+                <li>• Definição de metas mensais e semanais</li>
+                <li>• Organização do calendário comercial</li>
+                <li>• Planejamento de vendas por período</li>
+                <li>• Desenvolvimento de ofertas e promoções</li>
+                <li>• Projeções de faturamento para apoiar decisões</li>
+              </ul>
+            </details>
+          </article>
+
+          <!-- 02 -->
+          <article
+            class="rounded-2xl p-7 bg-[var(--surface)] border border-[var(--line)] flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between pb-5 border-b border-[var(--line)] mb-5">
+                <span class="text-xs font-bold px-2.5 py-1 rounded bg-[var(--surface-2)] text-brand-coral">ATRAIR</span>
+                <span class="font-mono text-xs font-bold text-[var(--muted)]">02</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-[var(--fg)] mb-3">Gestão estratégica de mídia paga</h3>
+              <p class="text-xs sm:text-sm text-[var(--muted)] leading-relaxed mb-5">
+                Conectamos Google Ads e Meta Ads ao momento da operação, com análise de desempenho para orientar a
+                distribuição do investimento.
+              </p>
+            </div>
+            <details class="pt-4 border-t border-[var(--line)] group">
+              <summary class="flex items-center justify-between text-xs font-bold text-[var(--fg)] cursor-pointer">
+                <span>Conheça as entregas (6)</span>
+                <span class="chevron-icon transition-transform">▼</span>
+              </summary>
+              <ul class="mt-4 pt-3 border-t border-[var(--line)]/60 space-y-2 text-xs text-[var(--muted)]">
+                <li>• Planejamento integrado Google Ads & Meta Ads</li>
+                <li>• Estruturação e gestão diária de campanhas</li>
+                <li>• Estratégias de públicos e segmentação</li>
+                <li>• Conceitos e variações de criativos</li>
+                <li>• Roteiros para anúncios de alta conversão</li>
+                <li>• Acompanhamento contínuo de CAC e ROAS</li>
+              </ul>
+            </details>
+          </article>
+
+          <!-- 03 -->
+          <article
+            class="rounded-2xl p-7 bg-[var(--surface)] border border-[var(--line)] flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between pb-5 border-b border-[var(--line)] mb-5">
+                <span
+                  class="text-xs font-bold px-2.5 py-1 rounded bg-[var(--surface-2)] text-brand-yellow">CONVERTER</span>
+                <span class="font-mono text-xs font-bold text-[var(--muted)]">03</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-[var(--fg)] mb-3">Estratégia para Live Shop</h3>
+              <p class="text-xs sm:text-sm text-[var(--muted)] leading-relaxed mb-5">
+                Planejamos a live como uma ação comercial completa, conectando conteúdo, produtos e ofertas à
+                experiência de compra e ao pós-live.
+              </p>
+            </div>
+            <details class="pt-4 border-t border-[var(--line)] group">
+              <summary class="flex items-center justify-between text-xs font-bold text-[var(--fg)] cursor-pointer">
+                <span>Conheça as entregas (6)</span>
+                <span class="chevron-icon transition-transform">▼</span>
+              </summary>
+              <ul class="mt-4 pt-3 border-t border-[var(--line)]/60 space-y-2 text-xs text-[var(--muted)]">
+                <li>• Definição dos objetivos e dinâmica da live</li>
+                <li>• Seleção de produtos e organização das ofertas</li>
+                <li>• Desenvolvimento do roteiro de apresentação</li>
+                <li>• Orientações para facilitar a jornada de compra</li>
+                <li>• Planejamento das ações pós-transmissão</li>
+                <li>• Análise de faturamento e resultados</li>
+              </ul>
+            </details>
+          </article>
+
+          <!-- 04 -->
+          <article
+            class="rounded-2xl p-7 bg-[var(--surface)] border border-[var(--line)] flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between pb-5 border-b border-[var(--line)] mb-5">
+                <span
+                  class="text-xs font-bold px-2.5 py-1 rounded bg-[var(--surface-2)] text-brand-yellow">CONVERTER</span>
+                <span class="font-mono text-xs font-bold text-[var(--muted)]">04</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-[var(--fg)] mb-3">Experiência de compra e conversão</h3>
+              <p class="text-xs sm:text-sm text-[var(--muted)] leading-relaxed mb-5">
+                Analisamos a jornada dentro da loja para identificar dificuldades na navegação e tornar a compra mais
+                simples e intuitiva (CRO).
+              </p>
+            </div>
+            <details class="pt-4 border-t border-[var(--line)] group">
+              <summary class="flex items-center justify-between text-xs font-bold text-[var(--fg)] cursor-pointer">
+                <span>Conheça as entregas (6)</span>
+                <span class="chevron-icon transition-transform">▼</span>
+              </summary>
+              <ul class="mt-4 pt-3 border-t border-[var(--line)]/60 space-y-2 text-xs text-[var(--muted)]">
+                <li>• Análise do funil completo de compra</li>
+                <li>• Avaliação de páginas de produto (PDPs)</li>
+                <li>• Revisão da navegação e arquitetura da loja</li>
+                <li>• Recomendações práticas de usabilidade</li>
+                <li>• Priorização de testes A/B e melhorias</li>
+                <li>• Mensuração do impacto das alterações</li>
+              </ul>
+            </details>
+          </article>
+
+          <!-- 05 -->
+          <article
+            class="rounded-2xl p-7 bg-[var(--surface)] border border-[var(--line)] flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between pb-5 border-b border-[var(--line)] mb-5">
+                <span
+                  class="text-xs font-bold px-2.5 py-1 rounded bg-[var(--surface-2)] text-brand-teal">RELACIONAR</span>
+                <span class="font-mono text-xs font-bold text-[var(--muted)]">05</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-[var(--fg)] mb-3">CRM e relacionamento com clientes</h3>
+              <p class="text-xs sm:text-sm text-[var(--muted)] leading-relaxed mb-5">
+                Estruturamos a comunicação ao longo da jornada de compra, com foco em recuperação de vendas, reativação
+                e recompra sustentável.
+              </p>
+            </div>
+            <details class="pt-4 border-t border-[var(--line)] group">
+              <summary class="flex items-center justify-between text-xs font-bold text-[var(--fg)] cursor-pointer">
+                <span>Conheça as entregas (6)</span>
+                <span class="chevron-icon transition-transform">▼</span>
+              </summary>
+              <ul class="mt-4 pt-3 border-t border-[var(--line)]/60 space-y-2 text-xs text-[var(--muted)]">
+                <li>• Planejamento de réguas de relacionamento</li>
+                <li>• Estruturação de automações (carrinho, boas-vindas)</li>
+                <li>• Segmentação da base de clientes por ticket/frequência</li>
+                <li>• Campanhas de e-mail marketing segmentadas</li>
+                <li>• Fluxos de comunicação por etapa do ciclo de vida</li>
+                <li>• Estratégias ativas de retenção e recompra</li>
+              </ul>
+            </details>
+          </article>
+
+          <!-- 06 -->
+          <article
+            class="rounded-2xl p-7 bg-[var(--surface)] border border-[var(--line)] flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between pb-5 border-b border-[var(--line)] mb-5">
+                <span class="text-xs font-bold px-2.5 py-1 rounded bg-[var(--surface-2)] text-[var(--fg)]">360°</span>
+                <span class="font-mono text-xs font-bold text-[var(--muted)]">06</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-[var(--fg)] mb-3">Consultoria para e-commerce</h3>
+              <p class="text-xs sm:text-sm text-[var(--muted)] leading-relaxed mb-5">
+                Uma visão estratégica sobre a operação para identificar oportunidades, organizar prioridades e apoiar as
+                decisões dos gestores.
+              </p>
+            </div>
+            <details class="pt-4 border-t border-[var(--line)] group">
+              <summary class="flex items-center justify-between text-xs font-bold text-[var(--fg)] cursor-pointer">
+                <span>Conheça as entregas (5)</span>
+                <span class="chevron-icon transition-transform">▼</span>
+              </summary>
+              <ul class="mt-4 pt-3 border-t border-[var(--line)]/60 space-y-2 text-xs text-[var(--muted)]">
+                <li>• Análise do momento e dos desafios da loja</li>
+                <li>• Identificação de gargalos e oportunidades</li>
+                <li>• Definição de prioridades para a operação</li>
+                <li>• Orientação para decisões comerciais</li>
+                <li>• Acompanhamento dos indicadores do negócio</li>
+              </ul>
+            </details>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESSO EM 4 PASSOS -->
+    <section id="processo" class="py-20 md:py-28 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mb-14">
+          <div class="flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-[var(--muted)] uppercase mb-4">
+            <span class="w-2 h-2 rounded-full bg-brand-teal"></span>
+            <span>Como Trabalhamos</span>
+          </div>
+
+          <h2
+            class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-[-0.03em] text-[var(--fg)] leading-tight">
+            Método claro.<br>
+            <span class="text-[var(--muted)] font-normal">Execução contínua em 4 passos.</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="p-6 rounded-2xl bg-[var(--surface)] border border-[var(--line)]">
+            <span
+              class="font-mono text-xs font-bold text-[var(--muted)] block pb-4 border-b border-[var(--line)] mb-4">PASSO
+              01</span>
+            <h3 class="font-display font-bold text-lg text-[var(--fg)] mb-2">Diagnóstico</h3>
+            <p class="text-xs sm:text-sm text-[var(--muted)] leading-relaxed">
+              Entendemos o momento da loja: números, produtos, margens, operação e os principais gargalos.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-[var(--surface)] border border-[var(--line)]">
+            <span
+              class="font-mono text-xs font-bold text-[var(--muted)] block pb-4 border-b border-[var(--line)] mb-4">PASSO
+              02</span>
+            <h3 class="font-display font-bold text-lg text-[var(--fg)] mb-2">Plano de Ação</h3>
+            <p class="text-xs sm:text-sm text-[var(--muted)] leading-relaxed">
+              Metas mensais e semanais, prioridades e calendário comercial definidos junto com o seu time.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-[var(--surface)] border border-[var(--line)]">
+            <span
+              class="font-mono text-xs font-bold text-[var(--muted)] block pb-4 border-b border-[var(--line)] mb-4">PASSO
+              03</span>
+            <h3 class="font-display font-bold text-lg text-[var(--fg)] mb-2">Execução Integrada</h3>
+            <p class="text-xs sm:text-sm text-[var(--muted)] leading-relaxed">
+              Mídia paga, ofertas, experiência de compra e CRM avançando juntos, cada frente no seu papel.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-[var(--surface)] border border-[var(--line)]">
+            <span
+              class="font-mono text-xs font-bold text-[var(--muted)] block pb-4 border-b border-[var(--line)] mb-4">PASSO
+              04</span>
+            <h3 class="font-display font-bold text-lg text-[var(--fg)] mb-2">Análise e Evolução</h3>
+            <p class="text-xs sm:text-sm text-[var(--muted)] leading-relaxed">
+              Indicadores de negócio acompanhados de perto para ajustar a rota e o investimento a cada ciclo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUEM ESTÁ À FRENTE (FELIPE FONTAN) -->
+    <section id="sobre" class="py-20 md:py-32 bg-[var(--surface)]/50 border-t border-[var(--line)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <!-- Foto do Fundador -->
+          <div class="lg:col-span-4 flex justify-center">
+            <div
+              class="relative w-full max-w-sm rounded-3xl overflow-hidden border border-[var(--line)] bg-[var(--surface-2)] shadow-xl">
+              <img src="cpc-reference/public/felipe-fontan.jpg" alt="Felipe Fontan em evento de negócios"
+                class="w-full h-auto object-cover object-top aspect-[3/4]"
+                onerror="this.src='https://cpccommerce.com.br/wp-content/uploads/2018/01/foto-felipe-fontan.png'">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#131615]/90 via-[#131615]/20 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <span class="text-[10px] font-bold tracking-[0.2em] text-brand-yellow uppercase block mb-1">Liderança
+                  Técnica</span>
+                <strong class="text-xl font-display font-bold block">Felipe Fontan</strong>
+                <span class="text-xs text-white/80 block">CEO da CPC Commerce</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bio e Credenciais -->
+          <div class="lg:col-span-8 flex flex-col items-start">
+            <div class="flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-[var(--muted)] uppercase mb-4">
+              <span class="w-2 h-2 rounded-full bg-brand-yellow"></span>
+              <span>Quem está à frente da CPC Commerce</span>
+            </div>
+
+            <h2
+              class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-[-0.03em] text-[var(--fg)] leading-tight">
+              Conhecimento construído<br>
+              <span class="text-brand-yellow">na prática do e-commerce.</span>
+            </h2>
+
+            <div class="mt-6 space-y-4 text-sm sm:text-base text-[var(--muted)] leading-relaxed max-w-2xl">
+              <p>
+                Desde 2010, Felipe atua no desenvolvimento de lojas virtuais, unindo mídia paga, estratégia comercial e
+                visão de negócio.
+              </p>
+              <p>
+                Graduado em Ciência da Computação e pós-graduado em Marketing Digital e E-commerce, também atua como
+                professor e mentor de empresas, apoiando gestores nas decisões para o crescimento de suas operações.
+              </p>
+            </div>
+
+            <!-- Credenciais -->
+            <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 w-full max-w-2xl">
+              <div
+                class="flex items-center gap-3 p-3 rounded-xl bg-[var(--surface)] border border-[var(--line)] text-xs font-medium text-[var(--fg)]">
+                <span class="text-brand-yellow">🎓</span>
+                <span>Graduado em Ciência da Computação</span>
+              </div>
+              <div
+                class="flex items-center gap-3 p-3 rounded-xl bg-[var(--surface)] border border-[var(--line)] text-xs font-medium text-[var(--fg)]">
+                <span class="text-brand-yellow">📜</span>
+                <span>Pós em Marketing Digital e E-commerce</span>
+              </div>
+              <div
+                class="flex items-center gap-3 p-3 rounded-xl bg-[var(--surface)] border border-[var(--line)] text-xs font-medium text-[var(--fg)]">
+                <span class="text-brand-yellow">🏅</span>
+                <span>Certificado Google Ads e Google Analytics</span>
+              </div>
+              <div
+                class="flex items-center gap-3 p-3 rounded-xl bg-[var(--surface)] border border-[var(--line)] text-xs font-medium text-[var(--fg)]">
+                <span class="text-brand-yellow">💼</span>
+                <span>Professor e mentor de gestores de e-commerce</span>
+              </div>
+            </div>
+
+            <!-- Plataformas -->
+            <div class="mt-8 pt-6 border-t border-[var(--line)] w-full">
+              <span class="text-[10px] font-bold tracking-wider text-[var(--muted)] uppercase block mb-3">Plataformas &
+                Tecnologias</span>
+              <div class="flex flex-wrap gap-2 text-xs font-semibold text-[var(--fg)]/90">
+                <span class="px-3 py-1 rounded-full bg-[var(--surface-2)] border border-[var(--line)]">VTEX</span>
+                <span class="px-3 py-1 rounded-full bg-[var(--surface-2)] border border-[var(--line)]">Magento</span>
+                <span class="px-3 py-1 rounded-full bg-[var(--surface-2)] border border-[var(--line)]">Loja
+                  Integrada</span>
+                <span class="px-3 py-1 rounded-full bg-[var(--surface-2)] border border-[var(--line)]">Nuvemshop</span>
+                <span class="px-3 py-1 rounded-full bg-[var(--surface-2)] border border-[var(--line)]">Tray</span>
+                <span class="px-3 py-1 rounded-full bg-[var(--surface-2)] border border-[var(--line)]">Shopify</span>
+              </div>
+            </div>
+
+            <!-- Links Sociais -->
+            <div class="mt-8 flex flex-wrap items-center gap-4 text-xs font-bold text-[var(--fg)]">
+              <a href="https://www.instagram.com/felipe_fontan/" target="_blank" rel="noopener noreferrer"
+                class="hover:text-brand-yellow transition-colors flex items-center gap-1.5">
+                <span>Instagram @felipe_fontan</span> ↗
+              </a>
+              <span class="text-[var(--line)]">•</span>
+              <a href="https://www.linkedin.com/in/felipe-fontan-augusto-99a23537/" target="_blank"
+                rel="noopener noreferrer" class="hover:text-brand-yellow transition-colors flex items-center gap-1.5">
+                <span>LinkedIn</span> ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 Stats do Fundador -->
+        <div class="mt-16 pt-12 border-t border-[var(--line)] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div class="p-5 rounded-2xl bg-[var(--surface)] border border-[var(--line)] text-center">
+            <strong class="font-display font-extrabold text-2xl sm:text-3xl text-brand-yellow block">Desde 2010</strong>
+            <span class="text-[11px] text-[var(--muted)] font-medium mt-2 block">Performance para e-commerce</span>
+          </div>
+          <div class="p-5 rounded-2xl bg-[var(--surface)] border border-[var(--line)] text-center">
+            <strong class="font-display font-extrabold text-2xl sm:text-3xl text-brand-yellow block">+150</strong>
+            <span class="text-[11px] text-[var(--muted)] font-medium mt-2 block">Projetos de e-commerce</span>
+          </div>
+          <div class="p-5 rounded-2xl bg-[var(--surface)] border border-[var(--line)] text-center">
+            <strong class="font-display font-extrabold text-2xl sm:text-3xl text-brand-yellow block">+900</strong>
+            <span class="text-[11px] text-[var(--muted)] font-medium mt-2 block">Alunos formados</span>
+          </div>
+          <div class="p-5 rounded-2xl bg-[var(--surface)] border border-[var(--line)] text-center">
+            <strong class="font-display font-extrabold text-2xl sm:text-3xl text-brand-yellow block">+85</strong>
+            <span class="text-[11px] text-[var(--muted)] font-medium mt-2 block">Mentorias individuais</span>
+          </div>
+          <div class="p-5 rounded-2xl bg-[var(--surface)] border border-[var(--line)] text-center">
+            <strong class="font-display font-extrabold text-2xl sm:text-3xl text-brand-yellow block">+R$ 4 mi</strong>
+            <span class="text-[11px] text-[var(--muted)] font-medium mt-2 block">Vendas/mês geridas</span>
+          </div>
+          <div class="p-5 rounded-2xl bg-[var(--surface)] border border-[var(--line)] text-center">
+            <strong class="font-display font-extrabold text-2xl sm:text-3xl text-brand-yellow block">+R$ 400k</strong>
+            <span class="text-[11px] text-[var(--muted)] font-medium mt-2 block">Anúncios/mês geridos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONVERSÃO / DIAGNÓSTICO -->
+    <section id="contato" class="py-20 md:py-32 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="rounded-3xl p-8 sm:p-12 lg:p-16 bg-[var(--surface)] border border-[var(--line)] shadow-xl relative overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            <!-- Contato Direto -->
+            <div class="lg:col-span-6 flex flex-col items-start">
+              <div
+                class="flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-[var(--muted)] uppercase mb-4">
+                <span class="w-2 h-2 rounded-full bg-brand-yellow"></span>
+                <span>Vamos Conversar</span>
+              </div>
+
+              <h2
+                class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-[-0.03em] text-[var(--fg)] leading-tight">
+                Conheça de perto<br>
+                <span class="text-brand-yellow">a CPC Commerce.</span>
+              </h2>
+
+              <p class="mt-4 text-sm sm:text-base text-[var(--muted)] leading-relaxed max-w-lg">
+                Converse diretamente com nosso time sobre o momento do seu e-commerce, metas e prioridades de
+                crescimento.
+              </p>
+
+              <a href="https://wa.me/5511964093547?text=Ol%C3%A1%21%20Quero%20conversar%20sobre%20meu%20e-commerce."
+                target="_blank" rel="noopener noreferrer"
+                class="mt-8 inline-flex items-center gap-3 px-6 py-4 rounded-full text-sm font-bold bg-brand-yellow text-brand-ink hover:opacity-90 transition-all shadow-md">
+                <span>Conversar pelo WhatsApp</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10">
+                  </path>
+                </svg>
+              </a>
+
+              <div class="mt-10 pt-8 border-t border-[var(--line)] space-y-3 w-full text-xs text-[var(--muted)]">
+                <p><strong class="text-[var(--fg)]">WhatsApp:</strong> (11) 96409-3547</p>
+                <p><strong class="text-[var(--fg)]">Endereço:</strong> Rua Maria Aparecida do Amaral Godói, 87 · Sala
+                  Atenas · Jardim São Paulo, São Paulo/SP · CEP 02039-070</p>
+                <p><strong class="text-[var(--fg)]">Horário:</strong> Segunda a Sexta · 09h às 18h</p>
+              </div>
+            </div>
+
+            <!-- Formulário de Qualificação -->
+            <div class="lg:col-span-6 rounded-2xl p-6 sm:p-8 bg-[var(--surface-2)] border border-[var(--line)]">
+              <span class="text-xs font-bold tracking-wider text-[var(--fg)] uppercase block mb-1">
+                Diagnóstico Inicial Sem Compromisso
+              </span>
+              <p class="text-xs text-[var(--muted)] mb-6">
+                Preencha os dados abaixo para direcionar a conversa com contexto no WhatsApp:
+              </p>
+
+              <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div>
+                  <label class="block text-xs font-semibold text-[var(--fg)] mb-1.5">Seu nome</label>
+                  <input id="inputName" type="text" required placeholder="Ex: Felipe Fontan"
+                    class="w-full px-3.5 py-2.5 rounded-xl bg-[var(--surface)] border border-[var(--line)] text-sm text-[var(--fg)] focus:outline-none focus:ring-2 focus:ring-brand-yellow">
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-[var(--fg)] mb-1.5">Link da sua loja virtual (ou
+                    Instagram)</label>
+                  <input id="inputStore" type="text" placeholder="sualoja.com.br"
+                    class="w-full px-3.5 py-2.5 rounded-xl bg-[var(--surface)] border border-[var(--line)] text-sm text-[var(--fg)] focus:outline-none focus:ring-2 focus:ring-brand-yellow">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-semibold text-[var(--fg)] mb-1.5">Plataforma atual</label>
+                    <select id="inputPlatform"
+                      class="w-full px-3.5 py-2.5 rounded-xl bg-[var(--surface)] border border-[var(--line)] text-sm text-[var(--fg)] focus:outline-none focus:ring-2 focus:ring-brand-yellow">
+                      <option value="">Selecione...</option>
+                      <option value="VTEX">VTEX</option>
+                      <option value="Magento">Magento</option>
+                      <option value="Loja Integrada">Loja Integrada</option>
+                      <option value="Nuvemshop">Nuvemshop</option>
+                      <option value="Tray">Tray</option>
+                      <option value="Shopify">Shopify</option>
+                      <option value="WooCommerce">WooCommerce</option>
+                      <option value="Outra">Outra</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label class="block text-xs font-semibold text-[var(--fg)] mb-1.5">Faturamento mensal</label>
+                    <select id="inputRevenue"
+                      class="w-full px-3.5 py-2.5 rounded-xl bg-[var(--surface)] border border-[var(--line)] text-sm text-[var(--fg)] focus:outline-none focus:ring-2 focus:ring-brand-yellow">
+                      <option value="">Selecione...</option>
+                      <option value="Iniciando operação">Iniciando operação</option>
+                      <option value="Até R$ 50 mil/mês">Até R$ 50 mil/mês</option>
+                      <option value="R$ 50 mil a R$ 200 mil/mês">R$ 50 mil a R$ 200 mil/mês</option>
+                      <option value="Acima de R$ 200 mil/mês">Acima de R$ 200 mil/mês</option>
+                    </select>
+                  </div>
+                </div>
+
+                <button type="submit"
+                  class="w-full mt-2 inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-xs font-bold bg-[var(--fg)] text-[var(--bg)] hover:opacity-95 transition-all shadow-sm">
+                  <span>Enviar Diagnóstico e Iniciar Conversa</span>
+                  <svg class="w-4 h-4 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                    </path>
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-20 md:py-28 bg-[var(--surface)]/30 border-t border-[var(--line)]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-xl mx-auto mb-14">
+          <div
+            class="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-[var(--muted)] uppercase mb-3">
+            <span>❓</span>
+            <span>Perguntas Frequentes</span>
+          </div>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl tracking-[-0.03em] text-[var(--fg)]">
+            Dúvidas comuns sobre o nosso modelo
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          <details class="rounded-2xl bg-[var(--surface)] border border-[var(--line)] p-6 group">
+            <summary
+              class="flex items-center justify-between font-display font-bold text-base sm:text-lg text-[var(--fg)] cursor-pointer">
+              <span>A CPC Commerce é uma agência?</span>
+              <span class="chevron-icon transition-transform text-[var(--muted)]">▼</span>
+            </summary>
+            <p class="mt-4 pt-4 border-t border-[var(--line)]/60 text-sm text-[var(--muted)] leading-relaxed">
+              Não no modelo tradicional. Somos uma empresa de performance e consultoria para e-commerce: olhamos para
+              todo o ecossistema da loja — mídia, oferta, experiência e relacionamento — e não apenas para os anúncios.
+            </p>
+          </details>
+
+          <details class="rounded-2xl bg-[var(--surface)] border border-[var(--line)] p-6 group">
+            <summary
+              class="flex items-center justify-between font-display font-bold text-base sm:text-lg text-[var(--fg)] cursor-pointer">
+              <span>Para qual perfil de loja vocês trabalham?</span>
+              <span class="chevron-icon transition-transform text-[var(--muted)]">▼</span>
+            </summary>
+            <p class="mt-4 pt-4 border-t border-[var(--line)]/60 text-sm text-[var(--muted)] leading-relaxed">
+              Nosso foco são lojas virtuais de pequeno e médio porte que querem crescer com método — seja estruturando a
+              operação do zero, seja melhorando os resultados de uma loja que já vende.
+            </p>
+          </details>
+
+          <details class="rounded-2xl bg-[var(--surface)] border border-[var(--line)] p-6 group">
+            <summary
+              class="flex items-center justify-between font-display font-bold text-base sm:text-lg text-[var(--fg)] cursor-pointer">
+              <span>Vocês fazem apenas mídia paga?</span>
+              <span class="chevron-icon transition-transform text-[var(--muted)]">▼</span>
+            </summary>
+            <p class="mt-4 pt-4 border-t border-[var(--line)]/60 text-sm text-[var(--muted)] leading-relaxed">
+              Não. Mídia é uma das seis frentes. Atuamos também com planejamento comercial, Live Shop, experiência de
+              compra, CRM e consultoria — todas conectadas pelos pilares Atrair, Converter e Relacionar.
+            </p>
+          </details>
+
+          <details class="rounded-2xl bg-[var(--surface)] border border-[var(--line)] p-6 group">
+            <summary
+              class="flex items-center justify-between font-display font-bold text-base sm:text-lg text-[var(--fg)] cursor-pointer">
+              <span>Com quais plataformas vocês têm experiência?</span>
+              <span class="chevron-icon transition-transform text-[var(--muted)]">▼</span>
+            </summary>
+            <p class="mt-4 pt-4 border-t border-[var(--line)]/60 text-sm text-[var(--muted)] leading-relaxed">
+              Temos experiência prática com VTEX, Magento, Loja Integrada, Opencart, Shoppub e Simplo7/Dlojavirtual,
+              entre outras. O método é o mesmo, independentemente da plataforma.
+            </p>
+          </details>
+
+          <details class="rounded-2xl bg-[var(--surface)] border border-[var(--line)] p-6 group">
+            <summary
+              class="flex items-center justify-between font-display font-bold text-base sm:text-lg text-[var(--fg)] cursor-pointer">
+              <span>Como começa o trabalho?</span>
+              <span class="chevron-icon transition-transform text-[var(--muted)]">▼</span>
+            </summary>
+            <p class="mt-4 pt-4 border-t border-[var(--line)]/60 text-sm text-[var(--muted)] leading-relaxed">
+              Com uma conversa sem compromisso pelo WhatsApp ou por Google Meet para entender o momento da sua loja. A
+              partir dela, fazemos um diagnóstico e propomos as frentes prioritárias.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER INSTITUCIONAL -->
+  <footer class="bg-[var(--surface)] border-t border-[var(--line)] text-[var(--muted)] py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-[var(--line)]">
+        <div class="md:col-span-5 flex flex-col items-start">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="cpc-reference/public/cpc-logo.png" alt="Logo CPC Commerce" class="w-9 h-10 object-contain"
+              onerror="this.src='https://cpccommerce.com.br/wp-content/uploads/2018/01/2.png'">
+            <div class="flex flex-col leading-none">
+              <span class="font-display font-extrabold text-lg tracking-tight text-[var(--fg)]">CPC</span>
+              <span class="text-[10px] font-bold tracking-[0.22em] text-[var(--muted)] uppercase mt-0.5">COMMERCE</span>
+            </div>
+          </div>
+          <p class="text-xs text-[var(--muted)] max-w-sm leading-relaxed mb-6">
+            Estratégia e performance para e-commerce. Conectamos gestão de mídia à realidade comercial da sua loja
+            virtual para acelerar crescimento sustentável.
+          </p>
+          <a href="https://www.google.com/partners/agency?id=7693892291" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--surface-2)] border border-[var(--line)] text-[11px] font-semibold text-[var(--fg)]">
+            <span>🛡️</span>
+            <span>Agência Certificada Google Partner</span>
+            <span>↗</span>
+          </a>
+        </div>
+
+        <div class="md:col-span-3">
+          <span class="text-xs font-bold uppercase tracking-wider text-[var(--fg)] block mb-4">Navegação</span>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#metodo" class="hover:text-[var(--fg)] transition-colors">Método CPC</a></li>
+            <li><a href="#solucoes" class="hover:text-[var(--fg)] transition-colors">Soluções</a></li>
+            <li><a href="#processo" class="hover:text-[var(--fg)] transition-colors">Processo</a></li>
+            <li><a href="#sobre" class="hover:text-[var(--fg)] transition-colors">Quem é Felipe Fontan</a></li>
+            <li><a href="#contato" class="hover:text-[var(--fg)] transition-colors">Contato & Diagnóstico</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-4 text-xs space-y-2 leading-relaxed">
+          <span class="text-xs font-bold uppercase tracking-wider text-[var(--fg)] block mb-4">Dados
+            Institucionais</span>
+          <p class="font-semibold text-[var(--fg)]">Felipe Fontan Augusto ME</p>
+          <p class="text-[var(--muted)]">CNPJ: 28.241.296/0001-51</p>
+          <p class="text-[var(--muted)]">
+            Rua Maria Aparecida do Amaral Godói, 87 · Sala Atenas<br>
+            Jardim São Paulo · São Paulo, SP · CEP 02039-070
+          </p>
+          <p class="pt-2 text-[var(--fg)] font-medium">
+            WhatsApp: <a href="https://wa.me/5511964093547" class="hover:text-brand-yellow">(11) 96409-3547</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--muted)]">
+        <div>
+          © 2026 CPC Commerce. Todos os direitos reservados.
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="https://www.instagram.com/felipe_fontan/" target="_blank" rel="noopener noreferrer"
+            class="hover:text-[var(--fg)] transition-colors">Instagram</a>
+          <a href="https://www.linkedin.com/in/felipe-fontan-augusto-99a23537/" target="_blank"
+            rel="noopener noreferrer" class="hover:text-[var(--fg)] transition-colors">LinkedIn</a>
+          <a href="#inicio"
+            class="w-8 h-8 rounded-full border border-[var(--line)] bg-[var(--surface-2)] flex items-center justify-center text-[var(--fg)]"
+            title="Voltar ao topo">↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts: Alternador Dark/Light + Envio Form para WhatsApp -->
+  <script>
+    // Alternador de Modo Claro / Modo Escuro
+    const themeBtn = document.getElementById('themeToggleBtn');
+    function applyTheme(isDark) {
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      localStorage.setItem('cpc-theme', isDark ? 'dark' : 'light');
+    }
+
+    // Carrega preferência do localStorage
+    const savedTheme = localStorage.getItem('cpc-theme');
+    if (savedTheme === 'light') {
+      applyTheme(false);
+    } else {
+      applyTheme(true); // Padrão elegante escuro
+    }
+
+    themeBtn.addEventListener('click', () => {
+      const isCurrentlyDark = document.documentElement.classList.contains('dark');
+      applyTheme(!isCurrentlyDark);
+    });
+
+    // Envio do formulário com mensagem qualificada para o WhatsApp
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('inputName').value;
+      const store = document.getElementById('inputStore').value;
+      const platform = document.getElementById('inputPlatform').value;
+      const revenue = document.getElementById('inputRevenue').value;
+
+      let msg = 'Olá Felipe! Me chamo ' + (name || 'um lojista') + '.';
+      if (store) msg += ' Minha loja é ' + store + '.';
+      if (platform) msg += ' Plataforma: ' + platform + '.';
+      if (revenue) msg += ' Faixa de faturamento: ' + revenue + '.';
+      msg += ' Gostaria de conversar sobre a aceleração do meu e-commerce.';
+
+      const url = 'https://wa.me/5511964093547?text=' + encodeURIComponent(msg);
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+  </script>
+</body>
+
+</html>

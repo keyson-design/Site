@@ -1,0 +1,24 @@
+# Ferramentas portáteis locais
+.tools/
+
+# Dependências
+node_modules/
+cpc-reference/node_modules/
+
+# Builds
+dist/
+cpc-reference/dist/
+dist-ssr/
+*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor e Sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
